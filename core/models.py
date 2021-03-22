@@ -11,9 +11,7 @@ class Customer(models.Model):
     name = models.CharField(max_length=50)
     address = models.CharField(max_length=100)
     profession = models.ManyToManyField(Profession)
-    datasheet = models.OneToOneField(DataSheet, on_delete=models.CASCADE,null=True)
-    # datasheet_id = models.ForeignKey(DataSheet,on_delete=models.CASCADE,null=True)
-        
+    datasheet = models.OneToOneField(DataSheet, on_delete=models.CASCADE,primary_key=True)        
     def __str(self): 
         return self.name
 
